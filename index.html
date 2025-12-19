@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - ForeFix</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1>ForeFix</h1>
+                <span class="prototype-tag">Prototype Build v1.0</span>
+            </div>
+
+            <!-- Login Form -->
+            <form id="loginForm" onsubmit="handleLogin(event)">
+                <div class="form-group">
+                    <label for="loginUsername">Username</label>
+                    <input type="text" id="loginUsername" required placeholder="Enter your username">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <input type="password" id="loginPassword" required placeholder="********">
+                    <div id="loginError" class="error-message">Invalid credentials</div>
+                </div>
+                <button type="submit" class="btn-primary">Log In</button>
+                <div class="auth-switch">
+                    Don't have an account? <a onclick="toggleAuth('signup')">Sign Up</a>
+                </div>
+            </form>
+
+            <!-- Signup Form -->
+            <form id="signupForm" class="hidden" onsubmit="handleSignup(event)">
+                <div class="form-group">
+                    <label for="signupUsername">Username</label>
+                    <input type="text" id="signupUsername" required placeholder="Choose a username">
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <input type="password" id="signupPassword" required placeholder="8-16 alphanumeric characters">
+                    <div id="signupError" class="error-message"></div>
+                </div>
+                <button type="submit" class="btn-primary">Create Account</button>
+                <div class="auth-switch">
+                    Already have an account? <a onclick="toggleAuth('login')">Log In</a>
+                </div>
+            </form>
+
+            <p style="margin-top: 2rem; font-size: 0.8rem; color: #94a3b8;">
+                Note: This is a prototype authentication system.
+            </p>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+</body>
+
+</html>
