@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - ForeFix</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <nav class="navbar">
+            <div class="nav-brand">
+                <i class="fas fa-heartbeat"></i> ForeFix
+            </div>
+            <div class="user-info">
+                <span id="userGreeting">Welcome, User</span>
+                <button onclick="logout()" class="btn-logout">Logout</button>
+            </div>
+        </nav>
+
+        <!-- Device Selection -->
+        <section>
+            <h2 class="section-title">1. Select Device Type</h2>
+            <div class="device-grid" id="deviceContainer">
+                <div class="device-card" data-device="Mobile" onclick="selectDevice('Mobile')">
+                    <i class="fas fa-mobile-alt device-icon"></i>
+                    <h3>Mobile</h3>
+                </div>
+                <div class="device-card" data-device="Laptop" onclick="selectDevice('Laptop')">
+                    <i class="fas fa-laptop device-icon"></i>
+                    <h3>Laptop</h3>
+                </div>
+                <div class="device-card" data-device="Web Application" onclick="selectDevice('Web Application')">
+                    <i class="fas fa-globe device-icon"></i>
+                    <h3>Web App</h3>
+                </div>
+            </div>
+        </section>
+
+        <!-- Symptom Selection -->
+        <section id="symptomSection" class="hidden">
+            <h2 class="section-title">2. Select Symptoms</h2>
+            <div class="symptom-grid" id="symptomGrid">
+                <!-- Injected via JS -->
+            </div>
+
+            <div class="analyze-section">
+                <button id="analyzeBtn" class="btn-analyze" onclick="analyze()" disabled>
+                    <i class="fas fa-search-plus"></i> Analyze Health
+                </button>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="history-section">
+            <h2 class="section-title">Session History</h2>
+            <div class="history-list" id="historyList">
+                <!-- Injected via JS -->
+            </div>
+        </section>
+    </div>
+
+    <!-- Result Modal -->
+    <div id="resultModal" class="result-modal hidden">
+        <div class="result-content">
+            <span class="close-modal" onclick="closeModal()">&times;</span>
+            <div id="resultContent">
+                <!-- Injected via JS -->
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
